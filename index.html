@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GradeCheck | GWA Calculator for Students</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="container nav-wrap">
+                <a href="#home" class="logo">Grade<span>Check</span></a>
+                <button id="menuBtn" class="menu-btn" aria-label="Toggle menu">&#9776;</button>
+                <nav id="navMenu" class="nav-menu">
+                    <a href="#home">Home</a>
+                    <a href="#calculator">Calculator</a>
+                    <a href="#scale">Grade Scale</a>
+                    <button id="themeBtn" class="theme-btn">Dark Mode</button>
+                </nav>
+            </div>
+        </header>
+ 
+        <main>
+            <section id="home" class="hero">
+                <div class="container">
+                    <h1>Know your GWA before the grades come out.</h1>
+                    <p>Add your subjects, units, and grades. GradeCheck computes your General Weighted Average and tells you where you stand.</p>
+                    <a href="#calculator" class="btn">Compute my GWA</a>
+                </div>
+            </section>
+ 
+            <section id="calculator" class="section container">
+                <h2>GWA Calculator</h2>
+ 
+                <form id="subjectForm" class="form-grid" novalidate>
+                    <div>
+                        <label for="subjectName">Subject</label>
+                        <input type="text" id="subjectName" placeholder="e.g. CS 110">
+                    </div>
+                    <div>
+                        <label for="subjectUnits">Units</label>
+                        <input type="number" id="subjectUnits" min="1" max="10" step="1" placeholder="3">
+                    </div>
+                    <div>
+                        <label for="subjectGrade">Grade (1.00 - 5.00)</label>
+                        <input type="number" id="subjectGrade" min="1" max="5" step="0.25" placeholder="1.75">
+                    </div>
+                    <button type="submit" class="btn">Add subject</button>
+                </form>
+                <p id="formError" class="error" role="alert"></p>
+ 
+                <div class="list-header">
+                    <h3>Your subjects</h3>
+                    <button id="clearBtn" class="ghost-btn" type="button">Clear all</button>
+                </div>
+                <ul id="subjectList" class="subject-list"></ul>
+ 
+                <div class="result-box">
+                    <div>
+                        <p class="result-label">Your GWA</p>
+                        <p id="gwaValue" class="gwa">--</p>
+                    </div>
+                    <div class="result-info">
+                        <p id="gwaRemark" class="remark">Add a subject to see your result.</p>
+                        <p id="gwaDetails" class="details"></p>
+                    </div>
+                </div>
+            </section>
+ 
+            <section id="scale" class="section container">
+                <h2>Grade Scale Used</h2>
+                <p class="section-note">This uses the common Philippine scale where 1.00 is the highest and 3.00 is the lowest passing grade. Your school may use a different scale, so check your student handbook.</p>
+                <div class="scale-grid">
+                    <div class="scale-item"><strong>1.00 - 1.50</strong><span>Excellent</span></div>
+                    <div class="scale-item"><strong>1.51 - 2.00</strong><span>Very Good</span></div>
+                    <div class="scale-item"><strong>2.01 - 2.50</strong><span>Good</span></div>
+                    <div class="scale-item"><strong>2.51 - 3.00</strong><span>Passed</span></div>
+                    <div class="scale-item"><strong>Above 3.00</strong><span>Needs improvement</span></div>
+                </div>
+            </section>
+        </main>
+ 
+        <footer class="site-footer">
+            <p>&copy; <span id="year"></span> GradeCheck. Made for Web Development 1.</p>
+        </footer>
+ 
+        <script src="script.js"></script>
+    </body>
+</html>
